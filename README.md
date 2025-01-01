@@ -30,11 +30,11 @@ Install Nginx reverse proxy to make this application available
 `sudo apt install nginx`
 
 --------------------------------------------------------------------------------------
-### Docker Project: 3 tier Application with Docker Compose
-## Technologys: 
-  # 1. Docker Compose
-  # 2. Nginx
-  # 3. Django
-  # 4. MySql
+## Docker Project: 3 tier Application with Docker Compose
+### Technologys: 
+  #### 1. Docker Compose
+  #### 2. Nginx
+  #### 3. Django
+  #### 4. MySql
              
 
