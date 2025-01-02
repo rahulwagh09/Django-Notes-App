@@ -31,6 +31,8 @@ Install Nginx reverse proxy to make this application available
 
 --------------------------------------------------------------------------------------
 ## Docker Project: Deploying a Django Web Application with Nginx and MySQL on Docker
+![image](https://github.com/user-attachments/assets/e5e597f1-68cd-4d07-be4a-3d8ddbc8dd88)
+
 
 Dockerization is about creating a portable ecosystem for your application. By combining Django, Nginx, and MySQL in a Docker setup, you ensure scalability,
 consistency, and ease of deployment. This guide will walk you through deploying a Django web application with Nginx, MySQL, and Docker Compose.
