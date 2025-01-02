@@ -103,10 +103,10 @@ Docker Compose simplifies multi-container applications. Here’s a detailed brea
 version: "3.8"
 ```
 
-**Compose Version:** Defines the Compose file format. Version 3.8 ensures compatibility with modern Docker features.
+*Compose Version:* Defines the Compose file format. Version 3.8 ensures compatibility with modern Docker features.
 
 ```
-Nginx Service
+#Nginx Service
  nginx:
     build: ./nginx
     image: nginx
@@ -118,15 +118,24 @@ Nginx Service
       - django_app
     networks:
       - notes-app-nw
-Build: The ./nginx context indicates a separate Dockerfile for Nginx.
-Image: Specifies the name of the Nginx image.
-Container Name: Names the container nginx_cont for easier identification.
-Ports: Maps port 80 on the host to port 80 in the container.
-Restart Policy: Automatically restarts the container if it fails.
-Depends On: Ensures the Nginx container starts only after the Django app is up.
-Network: Connects Nginx to the notes-app-nw network.
+```
 
-Django App Service
+*Build:* The ./nginx context indicates a separate Dockerfile for Nginx.
+
+*Image:* Specifies the name of the Nginx image.
+
+*Container Name:* Names the container nginx_cont for easier identification.
+
+*Ports:* Maps port 80 on the host to port 80 in the container.
+
+*Restart Policy:* Automatically restarts the container if it fails.
+
+*Depends On:* Ensures the Nginx container starts only after the Django app is up.
+
+*Network:* Connects Nginx to the notes-app-nw network.
+
+```
+#Django App Service
  django_app:
     build:
       context: .
@@ -150,15 +159,15 @@ Django App Service
       - notes-app-nw
 ```
 
-**Build Context:** Uses the root directory for building the Django app image.
+*Build Context:* Uses the root directory for building the Django app image.
 
-***Command:*** Runs migrations and starts the application using Gunicorn for production.
+*Command:* Runs migrations and starts the application using Gunicorn for production.
 
-***Environment Variables:*** Loaded from the .env file for sensitive data like database credentials.
+*Environment Variables:* Loaded from the .env file for sensitive data like database credentials.
 
-***Healthcheck:*** Periodically checks if the Django admin page is accessible.
+*Healthcheck:* Periodically checks if the Django admin page is accessible.
 
-***Network:*** Connects to the notes-app-nw network.
+*Network:* Connects to the notes-app-nw network.
 
 ```
 Database Service
@@ -180,12 +189,11 @@ Database Service
       - notes-app-nw
 ```
 
-**Image:** Uses the official MySQL image.
-
-***Environment Variables:*** MYSQL_ROOT_PASSWORD: Sets the root password. MYSQL_DATABASE: Creates a database named test_db.
-***Volumes:*** Maps a local directory for persistent storage of database files.
-***Healthcheck:*** Verifies MySQL is responsive using mysqladmin ping.
-***Network:*** Connects to the notes-app-nw network.
+*Image:* Uses the official MySQL image.
+*Environment Variables:* MYSQL_ROOT_PASSWORD: Sets the root password. MYSQL_DATABASE: Creates a database named test_db.
+*Volumes:* Maps a local directory for persistent storage of database files.
+*Healthcheck:* Verifies MySQL is responsive using mysqladmin ping.
+*Network:* Connects to the notes-app-nw network.
 
 ```
 Network Configuration
@@ -205,15 +213,14 @@ networks:
 
 ### Step 4: Common Pitfalls and Fixes
 
-**Database Connection Issues:** Ensure the .env file contains accurate credentials for MySQL.
+*Database Connection Issues:* Ensure the .env file contains accurate credentials for MySQL.
 
-**Container Restarts:** Check logs with docker logs <container_name> for insights.
+*Container Restarts:* Check logs with docker logs <container_name> for insights.
 
-**Gunicorn Performance:** Adjust worker processes and threads in production.
+*Gunicorn Performance:* Adjust worker processes and threads in production.
 
 
 Deploying a Django web application with Nginx and MySQL on Docker doesn’t have to be daunting. With a well-structured approach, you can build a scalable, production-ready stack in no time. If this guide helped you, let me know in the comments or share your deployment success story. Together, let’s build something incredible!
-
 
 
 ### FOLLOW KIYA KYA !!!!!! 
