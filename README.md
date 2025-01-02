@@ -38,10 +38,10 @@ consistency, and ease of deployment. This guide will walk you through deploying 
 ### Overview of Our Architecture
 Here’s what we’ll be deploying:
 
-#### 1. Django Backend: Handles application logic and serves data via APIs.
-#### 2. Nginx: Acts as a reverse proxy, improving security and performance.
-#### 3. MySQL Database: Stores application data persistently.
-#### 4. Docker Compose: Orchestrates these components seamlessly.
+**1. Django Backend:** Handles application logic and serves data via APIs.
+**2. Nginx:** Acts as a reverse proxy, improving security and performance.
+**3. MySQL Database:** Stores application data persistently.
+**4. Docker Compose:** Orchestrates these components seamlessly.
 
 ### Step 1: Understanding the Dockerfile
 Our Dockerfile creates a Docker image for the Django backend. Let’s break it down step-by-step:
