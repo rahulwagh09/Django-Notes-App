@@ -91,6 +91,7 @@ EXPOSE 8000
 **Expose Port:** Makes port 8000 available for communication with the host machine.
 
 This Dockerfile creates an isolated, dependency-ready environment for running your Django app.
+
              
 ### Step 2: Understanding docker-compose.yaml
 Docker Compose simplifies multi-container applications. Here’s a detailed breakdown of our docker-compose.yaml:
@@ -191,11 +192,13 @@ networks:
 
 **Custom Network:** Ensures all services communicate securely and efficiently.
 
+
 ### Step 3: Deployment Steps
 
 **Clone the Repository:**
 **Build and Start Services:**
 **Access the Application:** Navigate to http://localhost in your browser.
+
 
 ### Step 4: Common Pitfalls and Fixes
 
@@ -205,9 +208,9 @@ networks:
 
 **Gunicorn Performance:** Adjust worker processes and threads in production.
 
-### Conclusion
-Creadits to @ShubhamLondhe's Tutorial
 
 Deploying a Django web application with Nginx and MySQL on Docker doesn’t have to be daunting. With a well-structured approach, you can build a scalable, production-ready stack in no time. If this guide helped you, let me know in the comments or share your deployment success story. Together, let’s build something incredible!
+
+
 
 ### FOLLOW KIYA KYA !!!!!! 
