@@ -63,14 +63,8 @@ COPY requirements.txt /app/backend
 
 ```
 RUN apt-get update \\\
-```
-```
-   && apt-get upgrade -y \\\\
-```
-```
+    && apt-get upgrade -y \\\\
     && apt-get install -y gcc default-libmysqlclient-dev pkg-config \\\\
-```
-```
     && rm -rf /var/lib/apt/lists/ 
 ```
 **Install System Dependencies:** gcc: A compiler required for building some Python packages. default-libmysqlclient-dev: MySQL development headers for compatibility with mysqlclient. pkg-config: Ensures smooth installation of dependencies. rm -rf /var/lib/apt/lists/*: Cleans up to reduce image size.
@@ -88,7 +82,9 @@ COPY . /app/backend
 ```
 **Copy Application Code:** Copies all files from your local backend directory to the container’s working directory.
 
-```EXPOSE 8000```
+```
+EXPOSE 8000
+```
 **Expose Port:** Makes port 8000 available for communication with the host machine.
 
 This Dockerfile creates an isolated, dependency-ready environment for running your Django app.
